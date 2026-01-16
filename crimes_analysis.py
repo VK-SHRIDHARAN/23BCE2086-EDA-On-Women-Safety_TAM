@@ -20,9 +20,23 @@ print("="*80)
 print("CRIMES AGAINST WOMEN - EXPLORATORY DATA ANALYSIS")
 print("="*80)
 
-# Load the data
-df = pd.read_csv('CrimesOnWomenData.csv', index_col=0)
-desc = pd.read_csv('description.csv', index_col=0)
+# load the data from GitHub
+github_url = "https://raw.githubusercontent.com/VK-SHRIDHARAN/23BCE2086-EDA-On-Women-Safety_TAM/main/"
+
+try:
+    # try loading from GitHub first
+    df = pd.read_csv(github_url + 'CrimesOnWomenData.csv', index_col=0)
+    desc = pd.read_csv(github_url + 'description.csv', index_col=0)
+    print("Data loaded from GitHub")
+except:
+    # fallback to local files if available
+    try:
+        df = pd.read_csv('CrimesOnWomenData.csv', index_col=0)
+        desc = pd.read_csv('description.csv', index_col=0)
+        print("Data loaded from local directory")
+    except:
+        print("Error: Could not load data. Make sure files are available locally or on GitHub.")
+        raise
 
 print(f"\nDataset: {df.shape[0]} records, {df.shape[1]} columns")
 print("\nFirst few entries:")

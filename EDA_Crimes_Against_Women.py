@@ -33,9 +33,21 @@ print("="*80)
 print("LOADING AND PREPARING DATA")
 print("="*80)
 
-# Load datasets
-df = pd.read_csv('CrimesOnWomenData.csv', index_col=0)
-description = pd.read_csv('description.csv', index_col=0)
+# Load datasets from GitHub with fallback to local
+github_url = "https://raw.githubusercontent.com/VK-SHRIDHARAN/23BCE2086-EDA-On-Women-Safety_TAM/main/"
+
+try:
+    df = pd.read_csv(github_url + 'CrimesOnWomenData.csv', index_col=0)
+    description = pd.read_csv(github_url + 'description.csv', index_col=0)
+    print("Data loaded from GitHub")
+except:
+    try:
+        df = pd.read_csv('CrimesOnWomenData.csv', index_col=0)
+        description = pd.read_csv('description.csv', index_col=0)
+        print("Data loaded from local directory")
+    except:
+        print("Error: Could not load data from GitHub or local directory")
+        raise
 
 print("\nDataset Shape:", df.shape)
 print("\nFirst few rows:")

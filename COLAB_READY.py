@@ -2,6 +2,9 @@
 GOOGLE COLAB READY CODE
 =======================
 
+This code works in Google Colab without needing to upload files!
+Data is loaded directly from GitHub.
+
 Instructions for Google Colab:
 1. Go to https://colab.research.google.com
 2. Create a new notebook
@@ -9,18 +12,11 @@ Instructions for Google Colab:
 
 !pip install pandas numpy matplotlib seaborn scikit-learn
 
-4. In the second cell, upload CSV files:
+4. In the second cell, paste ALL of the code below and run it!
 
-from google.colab import files
-uploaded = files.upload()
-
-5. Paste the rest of this code below
+No file uploads needed - everything is automatic!
 
 """
-
-# ============================================================================
-# SETUP & DATA LOADING
-# ============================================================================
 
 import pandas as pd
 import numpy as np
@@ -38,9 +34,10 @@ sns.set_style("whitegrid")
 plt.rcParams['figure.figsize'] = (14, 8)
 plt.rcParams['font.size'] = 10
 
-# Load data
-df = pd.read_csv('CrimesOnWomenData.csv', index_col=0)
-description = pd.read_csv('description.csv', index_col=0)
+# Load data from GitHub (no file uploads needed!)
+github_url = "https://raw.githubusercontent.com/VK-SHRIDHARAN/23BCE2086-EDA-On-Women-Safety_TAM/main/"
+df = pd.read_csv(github_url + 'CrimesOnWomenData.csv', index_col=0)
+description = pd.read_csv(github_url + 'description.csv', index_col=0)
 
 print("="*80)
 print("EXPLORATORY DATA ANALYSIS: CRIMES AGAINST WOMEN IN INDIA")

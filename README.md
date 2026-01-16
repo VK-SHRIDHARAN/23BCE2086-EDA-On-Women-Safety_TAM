@@ -1,4 +1,9 @@
 # Crimes Against Women in India - EDA Analysis
+<p align="center">
+  <a href="https://colab.research.google.com/github/VK-SHRIDHARAN/23BCE2086-EDA-On-Women-Safety_TAM/blob/main/23BCE2086_TAMCode.ipynb">
+    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"/>
+  </a>
+</p>
 
 ## 📊 Project Overview
 
@@ -52,7 +57,7 @@ pip install jupyter
 
 #### Step 2: Start Jupyter
 ```bash
-cd "c:\Users\SHRIDHARAN VK\Desktop\TAM RECRUITMENT\Technical"
+
 jupyter notebook
 ```
 
@@ -60,27 +65,32 @@ jupyter notebook
 - Navigate to `23BCE2086_TAMCode.ipynb`
 - Click "Run All" or execute cells sequentially
 
-### Method 3: Use Google Colab (Recommended)
+### ☁️ Method 3: Run Using Google Colab (Recommended)
 
-1. **Create a new Colab notebook:**
-   - Visit [https://colab.research.google.com](https://colab.research.google.com)
-   - Sign in with Google account
+This project is fully integrated with GitHub and can be run in Colab without manual uploads.
 
-2. **Upload files to Colab:**
-   ```python
-   from google.colab import files
-   uploaded = files.upload()
-   ```
-   - Upload: `CrimesOnWomenData.csv` and `description.csv`
+Step 1: Open Notebook in Colab
 
-3. **Install dependencies:**
-   ```bash
-   !pip install pandas numpy matplotlib seaborn scikit-learn
-   ```
+Click the “Open in Colab” badge at the top of this README
+OR
 
-4. **Copy and paste the Python script code** or upload the notebook
+Go to https://colab.research.google.com
+ → GitHub tab → paste repo link
 
-5. **Run all cells** to generate analysis
+Step 2: Load Project Files Automatically
+
+Run the first cell in the notebook:
+
+!git clone https://github.com/VK-SHRIDHARAN/23BCE2086-EDA-On-Women-Safety_TAM.git
+%cd 23BCE2086-EDA-On-Women-Safety_TAM
+!ls
+
+Step 3: Install Dependencies
+!pip install -r requirements.txt
+
+Step 4: Run All Cells
+
+All datasets and scripts will load directly from GitHub.
 
 ## 📈 Generated Visualizations
 
